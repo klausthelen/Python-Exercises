@@ -25,17 +25,17 @@ for t in range(casos):
     n=int (input("Horses in the stable "))
     while (n < 2 or n > 5000):
         n=input("Select a Number of horses between 2 and 5000 ")
-    a = ""
+    horses_skills = ""
     for number in range (n):
         skill = (input("Skill of the horse number " + str(number+1) + " "))
         while (int(skill) < 1 or int(skill) > 1000000000):
             skill=input("The skill number is between 1 and 1000000000 ")
-        a += " " + skill
-    a=a.split()
-    a = [ int(x) for x in a ]
-    b=sorted(a)        
+        horses_skills += " " + skill
+    horses_skills=horses_skills.split()
+    horses_skills = [ int(x) for x in horses_skills ]
+    sorted_skills=sorted(horses_skills)        
     less=1000000000
-    less = [abs(int(b[i]) - int(b[i-1])) for i in range(1,len(b))]
+    less = [abs(int(sorted_skills[i]) - int(sorted_skills[i-1])) for i in range(1,len(sorted_skills))]
     less = sorted(less)[0]
     print("The minimum possible difference is " + str(less))
 
